@@ -44,7 +44,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: dist, assets, index.html, favicon.ico
+          - path: dist
+          - path: index.html
+          - path: favicon.ico
+          - path: assets
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
