@@ -44,7 +44,6 @@ jobs:
       - name: Copy additional files to dist
         run: |
           cp index.html dist/
-          cp favicon.ico dist/
           cp -r assets dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
