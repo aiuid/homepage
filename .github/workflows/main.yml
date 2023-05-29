@@ -43,7 +43,7 @@ jobs:
         run: npx tailwindcss build src/styles.css -o dist/output.css
       - name: Copy additional files to dist
         run: |
-          cp index.html dist/
+          cp *.html dist/
           cp -r assets dist/
           mkdir -p dist/dist
           cp dist/output.css dist/dist/
