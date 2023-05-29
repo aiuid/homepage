@@ -45,6 +45,8 @@ jobs:
         run: |
           cp index.html dist/
           cp -r assets dist/
+          mkdir -p dist/dist
+          cp dist/output.css dist/dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
