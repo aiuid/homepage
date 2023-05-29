@@ -39,17 +39,12 @@ jobs:
           node-version: '14'
       - name: Install dependencies
         run: npm install
-
       - name: Build CSS
         run: npx tailwindcss build src/styles.css -o dist/output.css
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path:
-            - dist
-            - index.html
-            - assets
-            - favicon.ico
+          path: dist, assets, index.html, favicon.ico
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
