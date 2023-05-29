@@ -41,13 +41,15 @@ jobs:
         run: npm install
       - name: Build CSS
         run: npx tailwindcss build src/styles.css -o dist/output.css
+      - name: Copy additional files to dist
+        run: |
+          cp index.html dist/
+          cp favicon.ico dist/
+          cp -r assets dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          - path: dist
-          - path: index.html
-          - path: favicon.ico
-          - path: assets
+          path: dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
